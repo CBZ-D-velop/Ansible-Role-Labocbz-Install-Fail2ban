@@ -1,0 +1,17 @@
+---
+- name: "Enable and start Fail2ban"
+  register: service_status
+  changed_when: service_status.state != "started"
+  ansible.builtin.service:
+    name: "fail2ban"
+    state: "started"
+    enabled: yes
+
+- name: "Restart Fail2ban"
+  register: service_status
+  changed_when: service_status.state != "restarted"
+  ansible.builtin.service:
+    name: "fail2ban"
+    state: "restarted"
+    daemon_reload: true
+    enabled: yes

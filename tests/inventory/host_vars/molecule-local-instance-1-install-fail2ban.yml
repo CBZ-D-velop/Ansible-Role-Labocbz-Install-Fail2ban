@@ -1,0 +1,4 @@
+---
+ansible_ssh_port: 22
+
+inv_fail2ban_ssh_port: 23

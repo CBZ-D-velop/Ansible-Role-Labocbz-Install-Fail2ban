@@ -1,0 +1,20 @@
+---
+# Don't forget to keep this file updated
+# molecule/<scenario>/verify.yml
+- name: "Verify"
+  hosts: "all"
+  gather_facts: false
+  tasks:
+
+    - name: "Get Fail2ban service current state"
+      register: fail2ban_service_status
+      failed_when: not fail2ban_service_status.status.ActiveState == 'active'
+      ansible.builtin.systemd:
+        name: "fail2ban"
+
+    - name: "Check /etc/fail2ban/jail.local file"
+      when: inv_fail2ban_ssh_port
+      register: file_stat
+      failed_when: not file_stat.stat.exists
+      ansible.builtin.stat:
+        path: "/etc/fail2ban/jail.local"
