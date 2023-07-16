@@ -6,6 +6,7 @@
     name: "fail2ban"
     state: "started"
     enabled: yes
+    daemon_reload: true
 
 - name: "Restart Fail2ban"
   register: service_status
