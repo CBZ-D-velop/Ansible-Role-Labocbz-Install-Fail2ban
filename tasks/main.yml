@@ -19,7 +19,13 @@
         group: "root"
         mode: "0600"
 
+    - name: "Check if a /var/log/auth.log file exist"
+      register: log_file
+      ansible.builtin.stat:
+        path: "/var/log/auth.log"
+
     - name: "Create a /var/log/auth.log file"
+      when: not log_file.stat.exists
       ansible.builtin.file:
         path: "/var/log/auth.log"
         state: touch
