@@ -17,6 +17,14 @@
 
 An Ansible role to install Faile2ban and import a basic jail configuration for SSH.
 
+The Ansible role installs Fail2Ban, a powerful security tool designed to protect the system from brute-force attacks and suspicious activities. By monitoring system log files, Fail2Ban detects repetitive failed login attempts and enforces bans on IP addresses that exhibit suspicious behavior.
+
+The role focuses on securing the SSH service, using Fail2Ban to monitor the SSH logs and dynamically block IP addresses that trigger predefined rules. By doing so, administrators can effectively thwart unauthorized access attempts, enhancing the system's overall security.
+
+To ensure administrators are promptly informed about security events, the role allows specifying an email address to receive reports and notifications from Fail2Ban. This feature enables administrators to stay vigilant and promptly respond to potential security threats.
+
+In summary, the Fail2Ban role streamlines the installation and configuration of the security tool, concentrating on protecting the SSH service. Fail2Ban's automated monitoring and banning capabilities strengthen the system's defense against malicious activities, bolstering the overall security posture and providing peace of mind for administrators.
+
 ## Folder structure
 
 By default Ansible will look in each directory within a role for a main.yml file for relevant content (also man.yml and main):
