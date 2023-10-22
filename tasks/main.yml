@@ -2,7 +2,7 @@
 - name: "Install packages"
   notify: "Enable and start Fail2ban"
   ansible.builtin.package:
-    update_cache: true
+    update_cache: false
     name:
       - "fail2ban"
       - "iptables"
