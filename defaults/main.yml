@@ -1,3 +1,3 @@
 ---
-fail2ban_report_email_address: "address@your.domain.tld"
-fail2ban_ssh_port: 22
+install_fail2ban__report_email_address: "address@your.domain.tld"
+install_fail2ban__ssh_port: 22

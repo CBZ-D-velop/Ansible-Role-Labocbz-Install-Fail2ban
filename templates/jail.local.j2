@@ -13,7 +13,7 @@ bantime = 3600
 banaction = iptables-multiport
 
 # Email notifications:
-destemail = {{ fail2ban_report_email_address }}
+destemail = {{ install_fail2ban__report_email_address }}
 sendername = Fail2Ban
 
 # Choose which log file to scan:
@@ -22,4 +22,4 @@ logpath  = /var/log/auth.log
 # Specify the services to monitor:
 [sshd]
 enabled = true
-port    = {{ fail2ban_ssh_port }}
+port    = {{ install_fail2ban__ssh_port }}
