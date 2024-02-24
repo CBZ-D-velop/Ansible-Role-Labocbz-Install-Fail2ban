@@ -108,8 +108,8 @@ Some vars a required to run this role:
 
 ```YAML
 ---
-fail2ban_report_email_address: "address@your.domain.tld"
-fail2ban_ssh_port: 22
+install_fail2ban__report_email_address: "address@your.domain.tld"
+install_fail2ban__ssh_port: 22
 
 ```
 
@@ -123,11 +123,11 @@ In order to surchage vars, you have multiples possibilities but for mains cases 
 # From inventory
 ---
 
-inv_fail2ban_report_email_address: "address@your.domain.tld"
+inv_install_fail2ban__report_email_address: "address@your.domain.tld"
 
 ---
 
-inv_fail2ban_ssh_port: 23
+inv_install_fail2ban__ssh_port: 23
 
 ```
 
@@ -146,8 +146,8 @@ To run this role, you can copy the molecule/default/converge.yml playbook and ad
     tags:
     - "labocbz.install_fail2ban"
     vars:
-    fail2ban_report_email_address: "{{ inv_fail2ban_report_email_address }}"
-    fail2ban_ssh_port: "{{ inv_fail2ban_ssh_port }}"
+    install_fail2ban__report_email_address: "{{ inv_install_fail2ban__report_email_address }}"
+    install_fail2ban__ssh_port: "{{ inv_install_fail2ban__ssh_port }}"
     ansible.builtin.include_role:
     name: "labocbz.install_fail2ban"
 ```
@@ -166,6 +166,11 @@ Here you can put your change to keep a trace of your work and decisions.
 * Molecule now use remote Docker image by Lord Robin Crombez
 * Molecule now use custom Docker image in CI/CD by env vars
 * New CICD with needs and optimization
+
+### 2024-02-24: Fix and CI
+
+* Added support for new CI base
+* Edit all vars with __
 
 ## Authors
 

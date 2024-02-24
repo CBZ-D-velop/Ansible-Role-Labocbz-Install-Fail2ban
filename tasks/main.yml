@@ -9,7 +9,7 @@
 
 - name: "Configure Fail2ban"
   notify: "Restart Fail2ban"
-  when: fail2ban_ssh_port | default(false)
+  when: install_fail2ban__ssh_port | default(false)
   block:
     - name: "Copy jail.local configuration file"
       ansible.builtin.template:
