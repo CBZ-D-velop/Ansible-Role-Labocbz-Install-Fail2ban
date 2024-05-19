@@ -146,10 +146,10 @@ To run this role, you can copy the molecule/default/converge.yml playbook and ad
     tags:
     - "labocbz.install_fail2ban"
     vars:
-    install_fail2ban__report_email_address: "{{ inv_install_fail2ban__report_email_address }}"
-    install_fail2ban__ssh_port: "{{ inv_install_fail2ban__ssh_port }}"
+        install_fail2ban__report_email_address: "{{ inv_install_fail2ban__report_email_address }}"
+        install_fail2ban__ssh_port: "{{ inv_install_fail2ban__ssh_port }}"
     ansible.builtin.include_role:
-    name: "labocbz.install_fail2ban"
+        name: "labocbz.install_fail2ban"
 ```
 
 ## Architectural Decisions Records
@@ -171,6 +171,14 @@ Here you can put your change to keep a trace of your work and decisions.
 
 * Added support for new CI base
 * Edit all vars with __
+
+### 2024-05-19: New CI
+
+* Added Markdown lint to the CICD
+* Rework all Docker images
+* Change CICD vars convention
+* New workers
+* Removed all automation based on branch
 
 ## Authors
 
